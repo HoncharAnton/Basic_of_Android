@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">Basic of Android</string>
+    <string name="main_btnok_title">OK</string>
+    <string name="main_etmessage_hint">enter you message</string>
+    <string name="main_tvmadeby_deftext">Made by Honchar Anton</string>
+    <string name="main_tvmadeby_deftext_ua">Розробник: Гончар Антон</string>
+
+</resources>
