@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Basic of Android</string>
+    <string name="main_btnok_title">OK</string>
+    <string name="main_etmessage_hint">введіть повідомлення</string>
+    <string name="main_tag_label">Розробник: Антон Гончар</string>
+    <string name="main_tad_supervised">Під керівництвом Дмитра Богданова</string>
+
+</resources>

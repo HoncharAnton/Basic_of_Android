@@ -6,47 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/topLinLayout"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_layout_margin_value_20dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:autofillHints="no"
+        android:ems="10"
+        android:gravity="center|top"
+        android:hint="@string/main_etmessage_hint"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        app:layout_constraintEnd_toStartOf="@+id/btnOk"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_margin="@dimen/default_layout_margin_value_20dp"
 
-        <EditText
-            android:id="@+id/etMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/default_layout_margin_value_20dp"
-            android:layout_weight="1"
-            android:autofillHints="no"
-            android:ems="15"
-            android:gravity="center|top"
-            android:hint="@string/main_etmessage_hint"
-            android:inputType="textMultiLine"
-            android:maxLines="5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnOk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/main_btnok_title" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_btnok_title"
+        android:layout_margin="@dimen/default_layout_margin_value_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etMessage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lines="10"
         android:layout_margin="@dimen/default_layout_margin_value_20dp"
         android:gravity="center"
+        android:lines="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topLinLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/etMessage" />
 
 
     <TextView
@@ -57,7 +52,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="end"
-        android:text="@string/main_tvmadeby_deftext"
+        android:text="@string/main_tag_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

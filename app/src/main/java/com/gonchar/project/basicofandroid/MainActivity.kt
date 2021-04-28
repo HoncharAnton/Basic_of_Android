@@ -6,20 +6,28 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.gonchar.project.basicofandroid.Constants.Companion.EMPTY_STRING
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private var btnOk: Button? = null
-    private var etMessage: EditText? = null
-    private var tvResult: TextView? = null
-    private var tvMadeBy: TextView? = null
+    private lateinit var btnOk: Button
+    private lateinit var etMessage: EditText
+    private lateinit var tvResult: TextView
+    private lateinit var tvMadeBy: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initLayoutElements()
+        initListener()
+    }
+
+    /**
+     * this method set clickListener to element which needed be clickable
+     */
+    private fun initListener() {
+        btnOk.setOnClickListener(this)
+        tvMadeBy.setOnClickListener(this)
     }
 
     /**
@@ -30,9 +38,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         etMessage = findViewById(R.id.etMessage)
         tvResult = findViewById(R.id.tvResult)
         tvMadeBy = findViewById(R.id.tvMadeBy)
-
-        btnOk!!.setOnClickListener(this)
-        tvMadeBy!!.setOnClickListener(this)
     }
 
     /**
@@ -41,17 +46,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         when (v!!.id) {
-            btnOk!!.id -> kotlin.run {
-                tvResult!!.text = etMessage!!.text
-                etMessage!!.setText(EMPTY_STRING)
+            btnOk.id -> {
+                tvResult.text = etMessage.text
+                etMessage.text.clear()
             }
-            tvMadeBy!!.id -> kotlin.run {
-                when (tvMadeBy!!.text.toString()) {
-                    getString(R.string.main_tvmadeby_deftext) ->
-                        tvMadeBy!!.setText(R.string.main_tvmadeby_deftext_ua)
+            tvMadeBy.id -> {
+                when (tvMadeBy.text.toString()) {
+                    getString(R.string.main_tad_supervised) ->
+                        tvMadeBy.text = getString(R.string.main_tag_label)
 
-                    getString(R.string.main_tvmadeby_deftext_ua) ->
-                        tvMadeBy!!.setText(R.string.main_tvmadeby_deftext)
+                    getString(R.string.main_tag_label) ->
+                        tvMadeBy.text = getString(R.string.main_tad_supervised)
                 }
             }
         }
